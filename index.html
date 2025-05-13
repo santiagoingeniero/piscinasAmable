@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Amable Piscinas - Diseño y Construcción de Piscinas de Lujo</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'pool-blue': '#0093d0',
+            'pool-teal': '#0abab5',
+            'pool-dark': '#004258',
+          },
+          fontFamily: {
+            'sans': ['Montserrat', 'sans-serif'],
+            'display': ['Playfair Display', 'serif'],
+          },
+        }
+      }
+    }
+  </script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-50">
+  <!-- Header/Navigation -->
+  <header class="fixed w-full bg-white shadow-md z-50">
+    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+      <a href="#inicio" class="flex items-center">
+        <span class="text-3xl font-bold text-pool-dark font-display">Amable <span class="text-pool-blue">Piscinas</span></span>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:flex space-x-8 font-medium">
+        <a href="#inicio" class="text-pool-dark hover:text-pool-blue transition duration-300">Inicio</a>
+        <a href="#galeria" class="text-pool-dark hover:text-pool-blue transition duration-300">Galería</a>
+        <a href="#video" class="text-pool-dark hover:text-pool-blue transition duration-300">Video</a>
+        <a href="#construccion" class="text-pool-dark hover:text-pool-blue transition duration-300">Construcción</a>
+        <a href="#contactar" class="text-pool-dark hover:text-pool-blue transition duration-300">Contactar</a>
+      </nav>
+
+      <!-- Mobile Menu Button -->
+      <button id="mobile-menu-button" class="md:hidden text-pool-dark">
+        <i class="fas fa-bars text-2xl"></i>
+      </button>
+    </div>
+
+    <!-- Mobile Navigation -->
+    <div id="mobile-menu" class="mobile-menu">
+      <nav class="flex flex-col py-4">
+        <a href="#inicio" class="py-3 px-6 border-b border-gray-100 text-pool-dark">Inicio</a>
+        <a href="#galeria" class="py-3 px-6 border-b border-gray-100 text-pool-dark">Galería</a>
+        <a href="#video" class="py-3 px-6 border-b border-gray-100 text-pool-dark">Video</a>
+        <a href="#construccion" class="py-3 px-6 border-b border-gray-100 text-pool-dark">Construcción</a>
+        <a href="#contactar" class="py-3 px-6 text-pool-dark">Contactar</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="inicio" class="relative h-screen flex items-center justify-center">
+    <div class="absolute inset-0 z-0">
+      <video class="object-cover w-full h-full" autoplay loop muted>
+        <source src="video/VID-20250501-WA0158.mp4" type="video/mp4">
+      </video>
+      <div class="absolute inset-0 bg-black opacity-40"></div>
+    </div>
+
+    <div class="container mx-auto px-4 relative z-10 text-center">
+      <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 font-display">Piscinas de Ensueño</h1>
+      <p class="text-xl md:text-2xl text-white mb-8 max-w-3xl mx-auto">Transformamos espacios en oasis de relajación con diseños exclusivos y construcción de calidad.</p>
+      <a href="#contactar" class="btn-primary">Solicitar Presupuesto</a>
+    </div>
+  </section>
+
+  <!-- Gallery Section -->
+  <section id="galeria" class="py-20 bg-white">
+    <div class="container mx-auto px-4">
+      <h2 class="text-4xl font-bold text-center text-pool-dark section-title">Nuestra Galería</h2>
+
+      <div class="flex justify-center mb-10">
+        <div class="inline-flex rounded-md shadow-sm" role="group">
+          <button id="filter-all" class="py-2 px-6 text-sm font-medium bg-pool-blue text-white rounded-l-lg">Todas</button>
+          <button id="filter-completed" class="py-2 px-6 text-sm font-medium bg-white text-pool-dark border border-pool-blue">Completadas</button>
+          <button id="filter-process" class="py-2 px-6 text-sm font-medium bg-white text-pool-dark border border-pool-blue rounded-r-lg">En Proceso</button>
+        </div>
+      </div>
+
+      <!-- Gallery Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4" id="gallery-container">
+        <!-- Gallery items will be loaded dynamically -->
+        <div class="gallery-item rounded-lg overflow-hidden aspect-square" data-category="completed">
+          <img src="piscinas/IMG-20250501-WA0094.jpg"Piscina de lujo" class="w-full h-full object-cover">
+        </div>
+        <div class="gallery-item rounded-lg overflow-hidden aspect-square" data-category="completed">
+          <img src="piscinas/IMG-20250430-WA0444.jpg" alt="Piscina con vista" class="w-full h-full object-cover">
+        </div>
+        <div class="gallery-item rounded-lg overflow-hidden aspect-square" data-category="completed">
+          <img src="piscinas/IMG-20250501-WA0083.jpg" alt="Piscina de mansión" class="w-full h-full object-cover">
+        </div>
+        <div class="gallery-item rounded-lg overflow-hidden aspect-square" data-category="process">
+          <img src="piscinas/IMG-20250501-WA0105.jpg" alt="Construcción de piscina" class="w-full h-full object-cover">
+        </div>
+        <div class="gallery-item rounded-lg overflow-hidden aspect-square" data-category="completed">
+          <img src="piscinas/IMG-20250501-WA0118.jpg" alt="Piscina infinity" class="w-full h-full object-cover">
+        </div>
+        <div class="gallery-item rounded-lg overflow-hidden aspect-square" data-category="completed">
+          <img src="piscinas/IMG-20250501-WA0140.jpg"Piscina elegante" class="w-full h-full object-cover">
+        </div>
+        <div class="gallery-item rounded-lg overflow-hidden aspect-square" data-category="process">
+          <img src="piscinas/IMG-20250509-WA0212.jpg" alt="Instalación de piscina" class="w-full h-full object-cover">
+        </div>
+        <div class="gallery-item rounded-lg overflow-hidden aspect-square" data-category="completed">
+          <img src="piscinas/IMG-20250509-WA0215.jpg" alt="Piscina de hotel" class="w-full h-full object-cover">
+        </div>
+        <div class="gallery-item rounded-lg overflow-hidden aspect-square" data-category="completed">
+          <img src="piscinas/IMG-20250509-WA0216.jpg" alt="Piscina de hotel" class="w-full h-full object-cover">
+        </div>
+        <div class="gallery-item rounded-lg overflow-hidden aspect-square" data-category="completed">
+          <img src="piscinas/IMG-20250509-WA0217.jpg" alt="Piscina de hotel" class="w-full h-full object-cover">
+        </div>
+        <div class="gallery-item rounded-lg overflow-hidden aspect-square" data-category="completed">
+          <img src="piscinas/IMG-20250509-WA0218.jpg" alt="Piscina de hotel" class="w-full h-full object-cover">
+        </div>
+        <div class="gallery-item rounded-lg overflow-hidden aspect-square" data-category="completed">
+          <img src="piscinas/IMG-20250509-WA0238.jpg" alt="Piscina de hotel" class="w-full h-full object-cover">
+        </div>
+        <div class="gallery-item rounded-lg overflow-hidden aspect-square" data-category="completed">
+          <img src="piscinas/IMG-20250509-WA0240.jpg" alt="Piscina de hotel" class="w-full h-full object-cover">
+        </div>
+      </div>
+
+      <div class="text-center mt-12">
+        <button id="load-more-gallery" class="btn-primary">Cargar más</button>
+      </div>
+    </div>
+
+    <!-- Gallery Modal -->
+    <div id="gallery-modal" class="modal">
+      <span class="close-modal">&times;</span>
+      <img id="modal-image" class="modal-content">
+      <video id="modal-video" class="modal-content" controls>
+        <source src="" type="video/mp4">
+      </video>
+      <span class="modal-nav modal-prev"><i class="fas fa-chevron-left"></i></span>
+      <span class="modal-nav modal-next"><i class="fas fa-chevron-right"></i></span>
+    </div>
+  </section>
+
+  <!-- Video Section -->
+  <section id="video" class="py-20 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <h2 class="text-4xl font-bold text-center text-pool-dark section-title">Nuestros Videos</h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
+        <div class="video-container shadow-lg">
+          <video class="w-full h-auto" autoplay loop muted>
+            <source src="video/VID-20250501-WA0167.mp4" type="video/mp4">
+          </video>
+          <div class="p-4 bg-white">
+            <h3 class="text-xl font-bold text-pool-dark">piscina #1</h3>
+            <p class="text-gray-600">Vista panorámica con borde infinito</p>
+          </div>
+        </div>
+
+        <div class="video-container shadow-lg">
+          <video class="w-full h-auto" autoplay loop muted>
+            <source src="video/VID-20250501-WA0190.mp4" type="video/mp4">
+          </video>
+          <div class="p-4 bg-white">
+            <h3 class="text-xl font-bold text-pool-dark">piscina #2</h3>
+            <p class="text-gray-600">Diseño exclusivo para hoteles</p>
+          </div>
+        </div>
+
+        <div class="video-container shadow-lg">
+          <video class="w-full h-auto" autoplay loop muted>
+            <source src="Piscinas creada/VID-20250430-WA0488.mp4" type="video/mp4">
+          </video>
+          <div class="p-4 bg-white">
+            <h3 class="text-xl font-bold text-pool-dark">piscina #3</h3>
+            <p class="text-gray-600">Elegancia en cada detalle</p>
+          </div>
+        </div>
+        <div class="video-container shadow-lg">
+          <video class="w-full h-auto" autoplay loop muted>
+            <source src="Piscinas creada/VID-20250430-WA0489.mp4" type="video/mp4">
+          </video>
+          <div class="p-4 bg-white">
+            <h3 class="text-xl font-bold text-pool-dark">piscina #4</h3>
+            <p class="text-gray-600">Elegancia en cada detalle</p>
+          </div>
+        </div>
+        <div class="video-container shadow-lg">
+          <video class="w-full h-auto" autoplay loop muted>
+            <source src="Piscinas creada/VID-20250501-WA0169.mp4" type="video/mp4">
+          </video>
+          <div class="p-4 bg-white">
+            <h3 class="text-xl font-bold text-pool-dark">Piscina #5</h3>
+            <p class="text-gray-600">Elegancia en cada detalle</p>
+          </div>
+        </div>
+        <div class="video-container shadow-lg">
+          <video class="w-full h-auto" autoplay loop muted>
+            <source src="Piscinas creada/VID-20250501-WA0181.mp4" type="video/mp4">
+          </video>
+          <div class="p-4 bg-white">
+            <h3 class="text-xl font-bold text-pool-dark">Piscina #6</h3>
+            <p class="text-gray-600">Elegancia en cada detalle</p>
+          </div>
+        </div>
+        <div class="video-container shadow-lg">
+          <video class="w-full h-auto" autoplay loop muted>
+            <source src="Piscinas creada/VID-20250501-WA0188.mp4" type="video/mp4">
+          </video>
+          <div class="p-4 bg-white">
+            <h3 class="text-xl font-bold text-pool-dark">Piscina #7</h3>
+            <p class="text-gray-600">Elegancia en cada detalle</p>
+          </div>
+        </div>
+        <div class="video-container shadow-lg">
+          <video class="w-full h-auto" autoplay loop muted>
+            <source src="Piscinas creada/VID-20250509-WA0219.mp4" type="video/mp4">
+          </video>
+          <div class="p-4 bg-white">
+            <h3 class="text-xl font-bold text-pool-dark">Piscina #8</h3>
+            <p class="text-gray-600">Elegancia en cada detalle</p>
+          </div>
+        </div>
+        <div class="video-container shadow-lg">
+          <video class="w-full h-auto" autoplay loop muted>
+            <source src="Piscinas creada/VID-20250509-WA0221.mp4" type="video/mp4">
+          </video>
+          <div class="p-4 bg-white">
+            <h3 class="text-xl font-bold text-pool-dark">Piscina #9</h3>
+            <p class="text-gray-600">Elegancia en cada detalle</p>
+          </div>
+        </div>
+        <div class="video-container shadow-lg">
+          <video class="w-full h-auto" autoplay loop muted>
+            <source src="Piscinas creada/VID-20250509-WA0222.mp4" type="video/mp4">
+          </video>
+          <div class="p-4 bg-white">
+            <h3 class="text-xl font-bold text-pool-dark">Piscina #7</h3>
+            <p class="text-gray-600">Elegancia en cada detalle</p>
+          </div>
+        </div>
+        <div class="video-container shadow-lg">
+          <video class="w-full h-auto" autoplay loop muted>
+            <source src="Piscinas creada/VID-20250509-WA0228.mp4" type="video/mp4">
+          </video>
+          <div class="p-4 bg-white">
+            <h3 class="text-xl font-bold text-pool-dark">Piscina #8</h3>
+            <p class="text-gray-600">Elegancia en cada detalle</p>
+          </div>
+        </div>
+        <div class="video-container shadow-lg">
+          <video class="w-full h-auto" autoplay loop muted>
+            <source src="Piscinas creada/VID-20250509-WA0229.mp4" type="video/mp4">
+          </video>
+          <div class="p-4 bg-white">
+            <h3 class="text-xl font-bold text-pool-dark">Piscina #9</h3>
+            <p class="text-gray-600">Elegancia en cada detalle</p>
+          </div>
+        </div>
+        <div class="video-container shadow-lg">
+          <video class="w-full h-auto" autoplay loop muted>
+            <source src="Piscinas creada/VID-20250509-WA0231.mp4" type="video/mp4">
+          </video>
+          <div class="p-4 bg-white">
+            <h3 class="text-xl font-bold text-pool-dark">Piscina #10</h3>
+            <p class="text-gray-600">Elegancia en cada detalle</p>
+          </div>
+        </div>
+        <div class="video-container shadow-lg">
+          <video class="w-full h-auto" autoplay loop muted>
+            <source src="Piscinas creada/VID-20250509-WA0232.mp4" type="video/mp4">
+          </video>
+          <div class="p-4 bg-white">
+            <h3 class="text-xl font-bold text-pool-dark">Piscina #11</h3>
+            <p class="text-gray-600">Elegancia en cada detalle</p>
+          </div>
+        </div>
+        <div class="video-container shadow-lg">
+          <video class="w-full h-auto" autoplay loop muted>
+            <source src="Piscinas creada/VID-20250509-WA0234.mp4" type="video/mp4">
+          </video>
+          <div class="p-4 bg-white">
+            <h3 class="text-xl font-bold text-pool-dark">Piscina #12</h3>
+            <p class="text-gray-600">Elegancia en cada detalle</p>
+          </div>
+        </div>
+        <div class="video-container shadow-lg">
+          <video class="w-full h-auto" autoplay loop muted>
+            <source src="Piscinas creada/VID-20250509-WA0244.mp4" type="video/mp4">
+          </video>
+          <div class="p-4 bg-white">
+            <h3 class="text-xl font-bold text-pool-dark">Piscina #13</h3>
+            <p class="text-gray-600">Elegancia en cada detalle</p>
+          </div>
+        </div>
+        <div class="video-container shadow-lg">
+          <video class="w-full h-auto" autoplay loop muted>
+            <source src="Piscinas creada/VID-20250509-WA0249.mp4" type="video/mp4">
+          </video>
+          <div class="p-4 bg-white">
+            <h3 class="text-xl font-bold text-pool-dark">Piscina #14</h3>
+            <p class="text-gray-600">Elegancia en cada detalle</p>
+          </div>
+        </div>
+        <div class="video-container shadow-lg">
+          <video class="w-full h-auto" autoplay loop muted>
+            <source src="Piscinas creada/VID-20250509-WA0250.mp4" type="video/mp4">
+          </video>
+          <div class="p-4 bg-white">
+            <h3 class="text-xl font-bold text-pool-dark">Piscina  #15</h3>
+            <p class="text-gray-600">Elegancia en cada detalle</p>
+          </div>
+        </div>
+        <div class="video-container shadow-lg">
+          <video class="w-full h-auto" autoplay loop muted>
+            <source src="Piscinas creada/VID-20250509-WA0253.mp4" type="video/mp4">
+          </video>
+          <div class="p-4 bg-white">
+            <h3 class="text-xl font-bold text-pool-dark">Piscina #16</h3>
+            <p class="text-gray-600">Elegancia en cada detalle</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center mt-12">
+        <button id="load-more-videos"  class="btn-primary">Ver más videos</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Construcción en Acción Section -->
+  <section id="construccion-accion" class="py-20 bg-white">
+    <div class="container mx-auto px-4">
+      <h2 class="text-4xl font-bold text-center text-pool-dark section-title">
+        Construcción en Acción
+      </h2>
+      <div class="mt-12 flex justify-center">
+        <div class="video-container shadow-lg max-w-4xl w-full">
+          <video class="w-full h-auto" autoplay muted controls loop>
+            <source src="picinas en construccion/km_20250513_540p_60f_20250513_171351.mp4" type="video/mp4">
+            Tu navegador no soporta el elemento de video.
+          </video>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Construction Process Section -->
+  <section id="construccion" class="py-20 bg-white">
+    <div class="container mx-auto px-4">
+      <h2 class="text-4xl font-bold text-center text-pool-dark section-title">Proceso de Construcción</h2>
+
+      <div class="mt-12 space-y-16">
+        <div class="flex flex-col md:flex-row items-center construction-step">
+          <div class="md:w-1/3 p-4">
+            <div class="bg-pool-blue bg-opacity-10 p-6 rounded-full inline-block">
+              <i class="fas fa-pencil-ruler text-5xl text-pool-blue"></i>
+            </div>
+          </div>
+          <div class="md:w-2/3 p-4">
+            <h3 class="text-2xl font-bold text-pool-dark mb-4">1. Diseño y Planificación</h3>
+            <p class="text-gray-600">Trabajamos con usted para crear el diseño perfecto que se adapte a su espacio y necesidades. Nuestro equipo de diseñadores expertos considerará aspectos como la ubicación, el tamaño, la forma y las características especiales que desea para su piscina.</p>
+          </div>
+        </div>
+
+        <div class="flex flex-col md:flex-row-reverse items-center construction-step">
+          <div class="md:w-1/3 p-4">
+            <div class="bg-pool-teal bg-opacity-10 p-6 rounded-full inline-block">
+              <i class="fas fa-shovel text-5xl text-pool-teal"></i>
+            </div>
+          </div>
+          <div class="md:w-2/3 p-4">
+            <h3 class="text-2xl font-bold text-pool-dark mb-4">2. Excavación y Preparación</h3>
+            <p class="text-gray-600">Una vez aprobado el diseño, comienza la excavación. Preparamos cuidadosamente el terreno, asegurando la estabilidad y el drenaje adecuados para la construcción de su piscina, con un enfoque meticuloso en cada detalle del proceso.</p>
+          </div>
+        </div>
+
+        <div class="flex flex-col md:flex-row items-center construction-step">
+          <div class="md:w-1/3 p-4">
+            <div class="bg-pool-blue bg-opacity-10 p-6 rounded-full inline-block">
+              <i class="fas fa-drafting-compass text-5xl text-pool-blue"></i>
+            </div>
+          </div>
+          <div class="md:w-2/3 p-4">
+            <h3 class="text-2xl font-bold text-pool-dark mb-4">3. Estructura y Refuerzos</h3>
+            <p class="text-gray-600">Construimos la estructura base con materiales de alta calidad y técnicas avanzadas. Instalamos el armazón de acero y refuerzos necesarios para garantizar la durabilidad y resistencia de su piscina por muchos años.</p>
+          </div>
+        </div>
+
+        <div class="flex flex-col md:flex-row-reverse items-center construction-step">
+          <div class="md:w-1/3 p-4">
+            <div class="bg-pool-teal bg-opacity-10 p-6 rounded-full inline-block">
+              <i class="fas fa-fill-drip text-5xl text-pool-teal"></i>
+            </div>
+          </div>
+          <div class="md:w-2/3 p-4">
+            <h3 class="text-2xl font-bold text-pool-dark mb-4">4. Revestimiento y Acabados</h3>
+            <p class="text-gray-600">Aplicamos revestimientos de alta calidad y realizamos los acabados según sus preferencias. Desde azulejos y mosaicos hasta acabados de piedra natural, ofrecemos una amplia variedad de opciones para personalizar su piscina.</p>
+          </div>
+        </div>
+
+        <div class="flex flex-col md:flex-row items-center construction-step">
+          <div class="md:w-1/3 p-4">
+            <div class="bg-pool-blue bg-opacity-10 p-6 rounded-full inline-block">
+              <i class="fas fa-tools text-5xl text-pool-blue"></i>
+            </div>
+          </div>
+          <div class="md:w-2/3 p-4">
+            <h3 class="text-2xl font-bold text-pool-dark mb-4">5. Instalación de Sistemas</h3>
+            <p class="text-gray-600">Instalamos sistemas de filtración, calefacción, iluminación y otros equipos. Utilizamos tecnología de vanguardia para garantizar la eficiencia energética y el fácil mantenimiento de su piscina.</p>
+          </div>
+        </div>
+
+        <div class="flex flex-col md:flex-row-reverse items-center construction-step">
+          <div class="md:w-1/3 p-4">
+            <div class="bg-pool-teal bg-opacity-10 p-6 rounded-full inline-block">
+              <i class="fas fa-check-circle text-5xl text-pool-teal"></i>
+            </div>
+          </div>
+          <div class="md:w-2/3 p-4">
+            <h3 class="text-2xl font-bold text-pool-dark mb-4">6. Entrega y Capacitación</h3>
+            <p class="text-gray-600">Finalizamos con la entrega de su piscina terminada y le brindamos una capacitación completa sobre su mantenimiento. Nuestro servicio postventa garantiza su satisfacción continua con su nueva piscina.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contactar" class="py-20 bg-white">
+    <div class="container mx-auto px-4">
+      <h2 class="text-4xl font-bold text-center text-pool-dark section-title">Contáctanos</h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mt-12">
+        <div>
+          <div class="animate-water h-2 w-20 mb-6"></div>
+          <h3 class="text-3xl font-bold text-pool-dark mb-6">¿Listo para tu piscina soñada?</h3>
+          <p class="text-gray-600 mb-8">Cuéntanos sobre tu proyecto y te contactaremos para brindarte un presupuesto personalizado. Nuestro equipo de expertos está listo para hacer realidad tu visión.</p>
+
+          <div class="space-y-6">
+            <div class="flex items-start">
+              <div class="bg-pool-blue bg-opacity-10 p-3 rounded-full mr-4">
+                <i class="fas fa-map-marker-alt text-pool-blue"></i>
+              </div>
+              <div>
+                <h4 class="text-lg font-bold text-pool-dark">Dirección</h4>
+                <p class="text-gray-600">Manzana h # 28 don Gregorio 1 Pantoja</p>
+              </div>
+            </div>
+
+            <div class="flex items-start">
+              <div class="bg-pool-blue bg-opacity-10 p-3 rounded-full mr-4">
+                <i class="fas fa-phone text-pool-blue"></i>
+              </div>
+              <div>
+                <h4 class="text-lg font-bold text-pool-dark">Teléfono y whatsapp</h4>
+                <p class="text-gray-600">+1 (809)415-0693</p>
+              </div>
+            </div>
+
+            <div class="flex items-start">
+              <div class="bg-pool-blue bg-opacity-10 p-3 rounded-full mr-4">
+                <i class="fas fa-envelope text-pool-blue"></i>
+              </div>
+              <div>
+                <h4 class="text-lg font-bold text-pool-dark">Email</h4>
+                <p class="text-gray-600">amablepapiscina@gmail.com</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-pool-dark text-white py-16">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+        <div>
+          <a href="#inicio" class="flex items-center mb-6">
+            <span class="text-3xl font-bold text-white font-display">Amable <span class="text-pool-blue">Piscinas</span></span>
+          </a>
+          <p class="text-gray-300 mb-6">Creando espacios acuáticos de ensueño con diseños exclusivos y construcción de calidad.</p>
+
+          <div class="flex space-x-4">
+            <a href="javascript:void(0)" class="social-icon text-2xl text-white hover:text-pool-blue transition-colors">
+              <i class=""></i>
+            </a>
+            <a href="javascript:void(0)" class="social-icon text-2xl text-white hover:text-pool-blue transition-colors">
+              <i class=""></i>
+            </a>
+            <a href="javascript:void(0)" class="social-icon text-2xl text-white hover:text-pool-blue transition-colors">
+              <i class=""></i>
+            </a>
+            <a href="javascript:void(0)" class="social-icon text-2xl text-white hover:text-pool-blue transition-colors">
+              <i class=""></i>
+            </a>
+            <a href="javascript:void(0)" class="social-icon text-2xl text-white hover:text-pool-blue transition-colors">
+              <i class=""></i>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="text-xl font-bold mb-6 relative">Enlaces Rápidos</h3>
+          <ul class="space-y-4">
+            <li><a href="#inicio" class="text-gray-300 hover:text-pool-blue transition-colors">Inicio</a></li>
+            <li><a href="#galeria" class="text-gray-300 hover:text-pool-blue transition-colors">Galería</a></li>
+            <li><a href="#video" class="text-gray-300 hover:text-pool-blue transition-colors">Video</a></li>
+            <li><a href="#construccion" class="text-gray-300 hover:text-pool-blue transition-colors">Construcción</a></li>
+            <li><a href="#contactar" class="text-gray-300 hover:text-pool-blue transition-colors">Contactar</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="text-xl font-bold mb-6 relative">Información de Contacto</h3>
+          <ul class="space-y-4">
+            <li class="flex items-start">
+              <i class="fas fa-map-marker-alt mt-1 mr-3 text-pool-blue"></i>
+              <span class="text-gray-300">Manzana h # 28 don Gregorio 1 Pantoja</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-phone mt-1 mr-3 text-pool-blue"></i>
+              <span class="text-gray-300">+1 (809) 415-0693</span>   
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-envelope mt-1 mr-3 text-pool-blue"></i>
+              <span class="text-gray-300">amablepapiscina@gmail.com</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-clock mt-1 mr-3 text-pool-blue"></i>
+              <span class="text-gray-300">Lunes - Viernes: 9:00 AM - 6:00 PM</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="border-t border-gray-700 mt-12 pt-8 text-center">
+        <p class="text-gray-400">&copy; 2025 Amable Piscinas. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <a href="#inicio" id="back-to-top" class="fixed bottom-6 right-6 bg-pool-blue text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg opacity-0 invisible transition-all duration-300">
+    <i class="fas fa-arrow-up"></i>
+  </a>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+  <!-- Custom JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
